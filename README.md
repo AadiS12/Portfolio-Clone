@@ -99,6 +99,8 @@ cd <repo-dir>/scripts # cd student
 #### macOS Users
 
 - Execute the script: `./activate_macos.sh`
+git remote add upstream https://github.com/open-coding-society/portfolio.git
+git remote -v
 
 #### Kasm Cloud Desktop Users
 
