@@ -5,7 +5,7 @@ hide: true
 show_reading_time: false
 ---
 
-Hi! My name is Aadi Saini!
+Hi! My name is Aadi Saini.
 
 ### Development Environment
 
