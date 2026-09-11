@@ -5,7 +5,7 @@ permalink: /about/
 comments: true
 ---
 
-## As a conversation Starter:
+## As a conversation Starter
 
 Here are some of the places that I relate to and my favorite fruits.
 
