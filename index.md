@@ -83,6 +83,39 @@ Hi! My name is Aadi Saini.
 
 <br>
 
+### APCSP Homeworks
+
+> My completed homework for each APCSP lesson, click to open it.
+
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;margin-bottom:8px;">
+  <a href="{{site.baseurl}}/python/variables-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.01 Variables</div></a>
+  <a href="{{site.baseurl}}/python/data-abstractions-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.02 Data Abstractions</div></a>
+  <a href="{{site.baseurl}}/python/math-expressions-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.03 Math Expressions</div></a>
+  <a href="{{site.baseurl}}/python/strings-intercepters-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.04 Strings</div></a>
+  <a href="{{site.baseurl}}/python/boolean-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.05 Boolean Expressions</div></a>
+  <a href="{{site.baseurl}}/python/conditionals-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.06 Conditionals</div></a>
+  <a href="{{site.baseurl}}/python/nested-conditionals-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.07 Nested Conditionals</div></a>
+  <a href="{{site.baseurl}}/python/iterations-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.08 Iterations</div></a>
+  <a href="{{site.baseurl}}/python/developing-algorithms-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.09 Developing Algorithms</div></a>
+  <a href="{{site.baseurl}}/csp/big-idea-3/lists-hw/" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.10 Lists</div></a>
+  <a href="{{site.baseurl}}/python/calling-procedures-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.12 Calling Procedures</div></a>
+  <a href="{{site.baseurl}}/python/developing-procedures-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.13 Developing Procedures</div></a>
+  <a href="{{site.baseurl}}/python/libraries-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.14 Libraries</div></a>
+  <a href="{{site.baseurl}}/python/random-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.15 Random Values</div></a>
+  <a href="{{site.baseurl}}/python/algorithmic-efficiency-hw" style="text-decoration:none;"><div style="background:#1f6feb;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">3.17 Algorithmic Efficiency</div></a>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;margin-bottom:8px;">
+  <a href="{{site.baseurl}}/sass/containers-hw/" style="text-decoration:none;"><div style="background:#c6538c;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">SASS Containers</div></a>
+  <a href="{{site.baseurl}}/sass/grids-hw/" style="text-decoration:none;"><div style="background:#c6538c;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">SASS Grids</div></a>
+  <a href="{{site.baseurl}}/sass/typography-hw" style="text-decoration:none;"><div style="background:#c6538c;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">SASS Typography</div></a>
+  <a href="{{site.baseurl}}/sass/inputs-hw/" style="text-decoration:none;"><div style="background:#c6538c;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">SASS Inputs</div></a>
+  <a href="{{site.baseurl}}/sass/toggles-hw/" style="text-decoration:none;"><div style="background:#c6538c;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">SASS Toggles</div></a>
+  <a href="{{site.baseurl}}/sass/buttons-hw/" style="text-decoration:none;"><div style="background:#c6538c;color:white;padding:10px 18px;border-radius:6px;font-weight:bold;">SASS Buttons</div></a>
+</div>
+
+<br>
+
 <!-- Contact Section -->
 ### Get in Touch
 
