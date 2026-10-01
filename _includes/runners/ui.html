@@ -1,5 +1,5 @@
 <!-- Reusable UI Runner Component -->
-<div class="ui-runner-container" id="ui-runner-{{ include.runner_id }}" data-storage-key="{{ page.permalink | replace: '/', '_' }}_{{ include.runner_id }}">
+<div class="ui-runner-container" id="ui-runner-{{ include.runner_id }}" data-storage-key="{{ page.permalink | replace: '/', '_' }}_{{ include.runner_id }}" data-mode="{{ include.mode | default: 'javascript' }}"{% if include.mode == "html" %} data-code="{{ include.code | jsonify | escape }}"{% endif %}>
   {% include runners/fragments/challenge-box.html challenge=include.challenge %}
 
   {% capture ui_runner_top_controls %}
@@ -33,7 +33,13 @@ import { BaseRunner, UiExecutor } from '{{ site.baseurl }}/assets/js/pages/runne
   const container = document.getElementById('ui-runner-{{ include.runner_id }}');
   if (!container) return;
   
+  const mode = container.dataset.mode;
+  // HTML starter code is stored as one-line JSON on the container, so blank lines or closing script tags in it cannot break the page.
+  {%- if include.mode == "html" %}
+  const defaultCode = JSON.parse(container.dataset.code).trim();
+  {%- else %}
   const defaultCode = `{{ include.code }}`.trim();
+  {%- endif %}
   const autostart = "{{ include.autostart | default: 'false' }}" === "true";
   const editorHeight = "{{ include.height }}";
   const outputHeight = "{{ include.output_height }}";
@@ -43,10 +49,10 @@ import { BaseRunner, UiExecutor } from '{{ site.baseurl }}/assets/js/pages/runne
   const editor = runner.initializeEditor({
     defaultCode,
     editorHeight,
-    fallbackCode: "// Write your JavaScript code here",
+    fallbackCode: mode === "html" ? "<!-- Write your HTML here -->" : "// Write your JavaScript code here",
     codeMirrorOptions: {
       lineNumbers: true,
-      mode: "javascript",
+      mode: mode === "html" ? "htmlmixed" : "javascript",
       theme: "darcula",
       indentUnit: 2,
       tabSize: 4,
@@ -62,6 +68,7 @@ import { BaseRunner, UiExecutor } from '{{ site.baseurl }}/assets/js/pages/runne
   const uiExecutor = new UiExecutor({
     editor,
     outputElement: uiOutput,
+    mode,
   });
 
   runner.bindEditorButtons({

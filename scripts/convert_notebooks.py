@@ -24,6 +24,7 @@ RUNNER_PATTERNS = {
     'javascript': r'^//\s*(?:CODE_RUNNER|GAME_RUNNER):\s*(.+)$',
     'python': r'^#\s*(?:CODE_RUNNER|GAME_RUNNER):\s*(.+)$',
     'java': r'^//\s*(?:CODE_RUNNER|GAME_RUNNER):\s*(.+)$',
+    'html': r'^<!--\s*UI_RUNNER:\s*(.+?)\s*-->$',
 }
 
 
@@ -102,7 +103,12 @@ def extract_code_runner_metadata(cell_source, language):
         if match:
             raw_challenge = match.group(1).strip()
             challenge_text, options = parse_runner_options(raw_challenge)
-            runner_type = 'game' if 'GAME_RUNNER:' in stripped.upper() else 'code'
+            if 'GAME_RUNNER:' in stripped.upper():
+                runner_type = 'game'
+            elif 'UI_RUNNER:' in stripped.upper():
+                runner_type = 'ui'
+            else:
+                runner_type = 'code'
             return {
                 'raw': raw_challenge,
                 'challenge': challenge_text,
@@ -173,6 +179,10 @@ def detect_cell_language(cell):
     # JavaScript: first line is %%js magic command
     if lines and lines[0].strip().startswith('%%js'):
         return 'javascript'
+
+    # HTML: first line is %%html magic command (rendered with the UI runner)
+    if lines and lines[0].strip().startswith('%%html'):
+        return 'html'
     
     # Java: last non-whitespace line matches ClassName.main(null);
     # Find last non-empty line
@@ -289,6 +299,9 @@ def inject_code_runners(markdown, notebook, front_matter=None):
                     result.append('')
                     if runner_data.get('runner_type') == 'game':
                         result.append('{% include runners/game.html')
+                    elif runner_data.get('runner_type') == 'ui':
+                        result.append('{% include runners/ui.html')
+                        result.append('   mode="html"')
                     else:
                         result.append('{% include code-runner.html')
                     result.append('   runner_id="' + runner_data['runner_id'] + '"')
