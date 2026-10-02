@@ -123,7 +123,8 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   
   const initialLang = "{{ include.language }}";
   const autostart = "{{ include.autostart | default: 'false' }}" === "true";
-  const defaultCode = JSON.parse(container.dataset.defaultCode || "\"\"");
+  // Drop the blank line(s) Liquid capture adds before the code, and any trailing whitespace.
+  const defaultCode = JSON.parse(container.dataset.defaultCode || "\"\"").replace(/^(\s*\n)+/, "").replace(/\s+$/, "");
   const editorHeight = "{{ include.height }}";
   const storageKey = container.dataset.storageKey;
   const runner = new BaseRunner(container, { storageKey });

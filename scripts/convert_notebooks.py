@@ -230,7 +230,7 @@ def process_code_runner_cells(notebook, permalink):
     return notebook
 
 
-def inject_code_runners(markdown, notebook, front_matter=None):
+def inject_code_runners(markdown, notebook, front_matter=None, modern_code_runner=False):
     """Inject code-runner includes after code blocks with metadata
     
     If front_matter contains 'challenge_submit: true', also injects:
@@ -302,6 +302,9 @@ def inject_code_runners(markdown, notebook, front_matter=None):
                     elif runner_data.get('runner_type') == 'ui':
                         result.append('{% include runners/ui.html')
                         result.append('   mode="html"')
+                    elif modern_code_runner:
+                        # Same component family as the UI runner (icon buttons, challenge box, editor stats).
+                        result.append('{% include runners/code.html')
                     else:
                         result.append('{% include code-runner.html')
                     result.append('   runner_id="' + runner_data['runner_id'] + '"')
@@ -367,7 +370,8 @@ def convert_notebook_to_markdown_with_front_matter(notebook_file):
         markdown = fix_js_code_blocks(markdown) # Fix JS code blocks
         
         # Inject code-runner includes (and submit buttons if challenge_submit is enabled)
-        markdown = inject_code_runners(markdown, notebook, front_matter)
+        markdown = inject_code_runners(markdown, notebook, front_matter,
+                                       modern_code_runner="Homework" in os.path.normpath(notebook_file).split(os.sep))
         
         front_matter_content = (
             "---\n"
