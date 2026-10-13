@@ -7,6 +7,12 @@ show_reading_time: false
 
 Hi! My name is Aadi Saini.
 
+### Retrospective and MCQ Review
+
+My Sprint 1 and 2 reflection, PVO plans, and practice exam results.
+
+<a href="{{ '/mcq-analysis/' | relative_url }}" style="display:inline-block;padding:8px 14px;border:1px solid currentColor;border-radius:4px;text-decoration:none;">Read Blog</a>
+
 ### Development Environment
 
 > Coding starts with tools, explore these tools and procedures with a click.
